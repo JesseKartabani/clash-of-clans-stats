@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   heading: {
     flexDirection: "row",
     alignItems: "center",
+    paddingBottom: 4,
     ...Platform.select({
       ios: {},
       android: {},
@@ -60,14 +61,13 @@ const styles = StyleSheet.create({
     }),
   },
 
-  searchBar: {},
-
   box: {
     backgroundColor: "#222222",
     padding: 20,
-    paddingTop: 15,
+    paddingTop: 10,
     borderWidth: 1,
     borderRadius: 10,
+    alignItems: "center",
   },
 
   textInput: {
