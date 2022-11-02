@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import NavBar from "../Components/NavBar";
+import StatSearch from "../Components/StatSearch";
 
 const HomeScreen = () => {
   return (
-    <NavBar />
-    //
-    //
-    //
-    //
+    <View>
+      <NavBar />
+      <StatSearch />
+    </View>
   );
 };
 
