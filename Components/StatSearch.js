@@ -7,6 +7,7 @@ import {
   TextInput,
 } from "react-native";
 import React, { useState } from "react";
+import { Icon } from "@rneui/base";
 
 const StatSearch = () => {
   // Track users input
@@ -21,17 +22,19 @@ const StatSearch = () => {
       {/* Player/Clan lookup */}
       <View style={styles.inputContainer}>
         <View style={styles.box}>
-          <Text>SEARCH PLAYERS</Text>
-          <View style={styles.searchBar}>
-            <TextInput
-              styles={styles.textInput}
-              placeholder="Find a Player (enter Tag)"
-              onChangeText={(newText) => setText(newText)}
-              defaultValue={text}
-              placeholderTextColor="white"
-              autoCapitalize="characters"
-            />
+          <View style={styles.heading}>
+            <Icon name="user" color="white" type="antdesign" />
+            <Text style={styles.headingTxt}>SEARCH PLAYERS</Text>
           </View>
+
+          <TextInput
+            style={styles.textInput}
+            placeholder="Find a Player (enter Tag)"
+            onChangeText={(newText) => setText(newText)}
+            defaultValue={text}
+            placeholderTextColor="white"
+            autoCapitalize="characters"
+          />
         </View>
       </View>
     </ImageBackground>
@@ -41,13 +44,40 @@ const StatSearch = () => {
 export default StatSearch;
 
 const styles = StyleSheet.create({
-  searchBar: {
+  headingTxt: {
+    color: "white",
+    textDecorationLine: "underline",
+    textDecorationColor: "gray",
+  },
+
+  heading: {
+    flexDirection: "row",
+    alignItems: "center",
+    ...Platform.select({
+      ios: {},
+      android: {},
+      default: {},
+    }),
+  },
+
+  searchBar: {},
+
+  box: {
+    backgroundColor: "#222222",
+    padding: 20,
+    paddingTop: 15,
+    borderWidth: 1,
+    borderRadius: 10,
+  },
+
+  textInput: {
     backgroundColor: "#696969",
     padding: 10,
     paddingLeft: 50,
     paddingRight: 50,
     borderWidth: 1,
     borderRadius: 10,
+    color: "white",
     ...Platform.select({
       ios: {},
       android: {},
@@ -57,17 +87,6 @@ const styles = StyleSheet.create({
         paddingRight: 150,
       },
     }),
-  },
-
-  box: {
-    backgroundColor: "#222222",
-    padding: 30,
-    borderWidth: 1,
-    borderRadius: 10,
-  },
-
-  textInput: {
-    height: 40,
   },
 
   inputContainer: {
