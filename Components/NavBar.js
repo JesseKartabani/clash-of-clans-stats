@@ -36,8 +36,12 @@ const styles = StyleSheet.create({
     height: 60,
     marginLeft: 30,
     ...Platform.select({
-      ios: {},
-      android: {},
+      ios: {
+        marginBottom: 10,
+      },
+      android: {
+        marginBottom: 10,
+      },
       default: {
         width: 175,
       },
