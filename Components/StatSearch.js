@@ -26,15 +26,17 @@ const StatSearch = () => {
             <Icon name="user" color="white" type="antdesign" />
             <Text style={styles.headingTxt}>SEARCH PLAYERS</Text>
           </View>
-
-          <TextInput
-            style={styles.textInput}
-            placeholder="Find a Player (enter Tag)"
-            onChangeText={(newText) => setText(newText)}
-            defaultValue={text}
-            placeholderTextColor="white"
-            autoCapitalize="characters"
-          />
+          <View style={styles.searchBar}>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Find a Player (enter Tag)"
+              onChangeText={(newText) => setText(newText)}
+              defaultValue={text}
+              placeholderTextColor="white"
+              autoCapitalize="characters"
+            />
+            <Icon name="arrowright" color="white" type="antdesign" />
+          </View>
         </View>
       </View>
     </ImageBackground>
@@ -44,6 +46,12 @@ const StatSearch = () => {
 export default StatSearch;
 
 const styles = StyleSheet.create({
+  searchBar: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingLeft: 25,
+  },
+
   headingTxt: {
     color: "white",
     textDecorationLine: "underline",
