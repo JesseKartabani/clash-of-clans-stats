@@ -18,7 +18,6 @@ const GlobalPlayerRanking = () => {
       );
       const json = await response.json();
       const data = json;
-      console.log(data);
       setStats(data);
     } catch (error) {
       console.error(error);
@@ -27,11 +26,15 @@ const GlobalPlayerRanking = () => {
 
   useEffect(() => {
     getPlayerStats();
+    //console.log(stats.items[0].name);
   }, []);
+
+  // stats.items[0] = rank 1 player
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.headingText}>Player Rankings</Text>
+      {/*<Text>{stats.items[0].name}</Text> */}
     </SafeAreaView>
   );
 };
