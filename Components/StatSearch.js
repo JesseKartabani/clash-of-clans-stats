@@ -5,13 +5,28 @@ import {
   Text,
   View,
   TextInput,
+  TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
 import { Icon } from "@rneui/base";
+import { useNavigation } from "@react-navigation/native";
 
 const StatSearch = () => {
+  const navigation = useNavigation();
   // Track users input
   const [text, setText] = useState("");
+
+  // Validate user input then navigate to player stats screen
+  function checkUserInput(input) {
+    if (input.length < 8) {
+      alert("Tag too short");
+    }
+    if (input.includes("#") == false) {
+      alert("Missing #");
+    } else {
+      navigation.navigate("Player Stats");
+    }
+  }
 
   return (
     <ImageBackground
@@ -19,7 +34,7 @@ const StatSearch = () => {
       resizeMode="fit"
       source={require("../assets/statSearchBackground.jpeg")}
     >
-      {/* Player/Clan lookup */}
+      {/* Player lookup */}
       <View style={styles.inputContainer}>
         <View style={styles.box}>
           <View style={styles.heading}>
@@ -29,13 +44,19 @@ const StatSearch = () => {
           <View style={styles.searchBar}>
             <TextInput
               style={styles.textInput}
-              placeholder="Find a Player (enter Tag)"
-              onChangeText={(newText) => setText(newText)}
+              placeholder="#Y9C92G2C (enter Tag)"
+              onChangeText={(newText) => setText(newText.toUpperCase())}
               defaultValue={text}
               placeholderTextColor="white"
               autoCapitalize="characters"
             />
-            <Icon name="arrowright" color="white" type="antdesign" />
+            <TouchableOpacity
+              onPress={() => {
+                checkUserInput(text);
+              }}
+            >
+              <Icon name="arrowright" color="white" type="antdesign" />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -56,6 +77,7 @@ const styles = StyleSheet.create({
     color: "white",
     textDecorationLine: "underline",
     textDecorationColor: "gray",
+    fontWeight: "700",
   },
 
   heading: {
@@ -81,18 +103,19 @@ const styles = StyleSheet.create({
   textInput: {
     backgroundColor: "#696969",
     padding: 10,
-    paddingLeft: 50,
-    paddingRight: 50,
+    paddingLeft: 40,
+    paddingRight: 40,
     borderWidth: 1,
     borderRadius: 10,
     color: "white",
+    minWidth: 200,
     ...Platform.select({
       ios: {},
       android: {},
       default: {
         padding: 15,
-        paddingLeft: 150,
-        paddingRight: 150,
+        paddingLeft: 75,
+        paddingRight: 75,
       },
     }),
   },
