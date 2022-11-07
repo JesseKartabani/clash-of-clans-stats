@@ -1,24 +1,22 @@
 import { StyleSheet, Text, View, SafeAreaView, Platform } from "react-native";
 import React, { useEffect, useState } from "react";
-import { API_TOKEN } from "@env";
+import { IP } from "@env";
 
 const GlobalPlayerRanking = () => {
   // fetch data
   const [stats, setStats] = useState([]);
   const getPlayerStats = async () => {
     try {
-      const response = await fetch(
-        "https://api.clashofclans.com/v1/locations/global/rankings/players?limit=5",
-        {
-          headers: {
-            "Content-type": "application/json",
-            Authorization: `Bearer ${API_TOKEN}`,
-          },
-        }
-      );
+      const response = await fetch(`http://${IP}:4000/top5`, {
+        mode: "cors",
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
       const json = await response.json();
       const data = json;
       setStats(data);
+      console.log(data);
     } catch (error) {
       console.error(error);
     }
