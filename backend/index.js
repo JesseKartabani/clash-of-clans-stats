@@ -32,6 +32,27 @@ app.get("/top5", async (req, res) => {
   }
 });
 
+// Highest versus trophies globally limted to 5 responses
+app.get("/versusTop5", async (req, res) => {
+  try {
+    const response = await fetch(
+      "https://api.clashofclans.com/v1/locations/global/rankings/players-versus?limit=5",
+      {
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${API_TOKEN}`,
+        },
+      }
+    );
+    const json = await response.json();
+    const globalVersusRankingData = json;
+    res.send(globalVersusRankingData);
+    console.log(globalVersusRankingData);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
