@@ -58,6 +58,7 @@ app.post("/userSearch", function (req, res) {
   var newSearch = req.body.token;
   res.send(newSearch);
 
+  // Use search input to get individual player data
   app.get("/userSearch", async (req, res) => {
     try {
       const response = await fetch(
