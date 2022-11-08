@@ -23,8 +23,8 @@ const StatSearch = () => {
     if (input.length < 8) {
       alert("Tag too short");
     }
-    if (input.includes("#") == false) {
-      alert("Missing #");
+    if (input.includes("#") == true) {
+      setText(text.replace("#", ""));
     } else {
       postUserInput();
       navigation.navigate("Player Stats");
@@ -34,7 +34,9 @@ const StatSearch = () => {
   // Post user input to backend express server
   const postUserInput = () => {
     axios
-      .post(`http://${IP}:4000/userSearch`, text)
+      .post(`http://${IP}:4000/userSearch`, {
+        token: text,
+      })
       .then(() => console.log("input recorded"))
       .catch((err) => {
         console.error(err);
