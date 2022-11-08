@@ -11,8 +11,8 @@ import { IP } from "@env";
 
 const GlobalPlayerRanking = () => {
   // fetch data
-  const [stats, setStats] = useState([]);
-  const getPlayerStats = async () => {
+  const [topTrophies, setTopTrophies] = useState([]);
+  const getPlayerTopTrophies = async () => {
     try {
       const response = await fetch(`http://${IP}:4000/top5`, {
         mode: "cors",
@@ -22,7 +22,7 @@ const GlobalPlayerRanking = () => {
       });
       const json = await response.json();
       const data = json;
-      setStats(data);
+      setTopTrophies(data);
       console.log(data);
     } catch (error) {
       console.error(error);
@@ -30,7 +30,7 @@ const GlobalPlayerRanking = () => {
   };
 
   useEffect(() => {
-    getPlayerStats();
+    getPlayerTopTrophies();
   }, []);
 
   return (
@@ -50,29 +50,29 @@ const GlobalPlayerRanking = () => {
           </Text>
         </View>
         {/* Name and trophies */}
-        {stats.items != undefined && (
+        {topTrophies.items != undefined && (
           <Text style={styles.statTxt}>
-            {stats.items[0].name + ":  " + stats.items[2].trophies}
+            {topTrophies.items[0].name + ":  " + topTrophies.items[2].trophies}
           </Text>
         )}
-        {stats.items != undefined && (
+        {topTrophies.items != undefined && (
           <Text style={styles.statTxt}>
-            {stats.items[1].name + ":  " + stats.items[1].trophies}
+            {topTrophies.items[1].name + ":  " + topTrophies.items[1].trophies}
           </Text>
         )}
-        {stats.items != undefined && (
+        {topTrophies.items != undefined && (
           <Text style={styles.statTxt}>
-            {stats.items[2].name + ":  " + stats.items[2].trophies}
+            {topTrophies.items[2].name + ":  " + topTrophies.items[2].trophies}
           </Text>
         )}
-        {stats.items != undefined && (
+        {topTrophies.items != undefined && (
           <Text style={styles.statTxt}>
-            {stats.items[3].name + ":  " + stats.items[3].trophies}
+            {topTrophies.items[3].name + ":  " + topTrophies.items[3].trophies}
           </Text>
         )}
-        {stats.items != undefined && (
+        {topTrophies.items != undefined && (
           <Text style={styles.statTxt}>
-            {stats.items[4].name + ":  " + stats.items[4].trophies}
+            {topTrophies.items[4].name + ":  " + topTrophies.items[4].trophies}
           </Text>
         )}
       </View>
