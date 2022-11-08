@@ -10,6 +10,8 @@ import {
 import React, { useState } from "react";
 import { Icon } from "@rneui/base";
 import { useNavigation } from "@react-navigation/native";
+import { IP } from "@env";
+import axios from "axios";
 
 const StatSearch = () => {
   const navigation = useNavigation();
@@ -24,9 +26,20 @@ const StatSearch = () => {
     if (input.includes("#") == false) {
       alert("Missing #");
     } else {
+      postUserInput();
       navigation.navigate("Player Stats");
     }
   }
+
+  // Post user input to backend express server
+  const postUserInput = () => {
+    axios
+      .post(`http://${IP}:4000/userSearch`, text)
+      .then(() => console.log("input recorded"))
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
   return (
     <ImageBackground
