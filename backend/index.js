@@ -58,7 +58,7 @@ app.post("/userSearch", function (req, res) {
   var newSearch = req.body;
   console.log(newSearch);
 });
-console.log(newSearch);
+
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
