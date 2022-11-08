@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 import { IP } from "@env";
 
 const GlobalPlayerRanking = () => {
-  // fetch data
+  // fetch top 5 players based off trophies globally
   const [topTrophies, setTopTrophies] = useState([]);
   const getPlayerTopTrophies = async () => {
     try {
@@ -29,8 +29,28 @@ const GlobalPlayerRanking = () => {
     }
   };
 
+  // fetch top 5 players based off versus trophies globally
+  const [topVersusTrophies, setTopVersusTrophies] = useState([]);
+  const getPlayerTopVersusTrophies = async () => {
+    try {
+      const response = await fetch(`http://${IP}:4000/versusTop5`, {
+        mode: "cors",
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      const json = await response.json();
+      const data = json;
+      setTopVersusTrophies(data);
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     getPlayerTopTrophies();
+    getPlayerTopVersusTrophies();
   }, []);
 
   return (
