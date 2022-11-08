@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Platform,
   Image,
+  ScrollView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { IP } from "@env";
@@ -58,44 +59,111 @@ const GlobalPlayerRanking = () => {
       {/* Heading */}
       <Text style={styles.headingText}>Player Rankings</Text>
 
-      {/* Top 5 players by trophies */}
-      <View style={styles.catergoryContainer}>
-        <View style={styles.catergoryHeadingContainer}>
-          <Text style={styles.catergoryHeading}>
-            <Image
-              style={styles.trophieImg}
-              source={require("../assets/trophy.jpg")}
-            />
-            Trophies
-          </Text>
+      <ScrollView
+        centerContent={true}
+        horizontal={true}
+        style={styles.flatList}
+      >
+        {/* Top 5 players by trophies */}
+        <View style={styles.catergoryContainer}>
+          <View style={styles.catergoryHeadingContainer}>
+            <Text style={styles.catergoryHeading}>
+              <Image
+                style={styles.trophieImg}
+                source={require("../assets/trophy.jpg")}
+              />{" "}
+              Trophies
+            </Text>
+          </View>
+          {/* Name and trophies */}
+          {topTrophies.items != undefined && (
+            <Text style={styles.statTxt}>
+              {topTrophies.items[0].name +
+                ":  " +
+                topTrophies.items[2].trophies}
+            </Text>
+          )}
+          {topTrophies.items != undefined && (
+            <Text style={styles.statTxt}>
+              {topTrophies.items[1].name +
+                ":  " +
+                topTrophies.items[1].trophies}
+            </Text>
+          )}
+          {topTrophies.items != undefined && (
+            <Text style={styles.statTxt}>
+              {topTrophies.items[2].name +
+                ":  " +
+                topTrophies.items[2].trophies}
+            </Text>
+          )}
+          {topTrophies.items != undefined && (
+            <Text style={styles.statTxt}>
+              {topTrophies.items[3].name +
+                ":  " +
+                topTrophies.items[3].trophies}
+            </Text>
+          )}
+          {topTrophies.items != undefined && (
+            <Text style={styles.statTxt}>
+              {topTrophies.items[4].name +
+                ":  " +
+                topTrophies.items[4].trophies}
+            </Text>
+          )}
         </View>
-        {/* Name and trophies */}
-        {topTrophies.items != undefined && (
-          <Text style={styles.statTxt}>
-            {topTrophies.items[0].name + ":  " + topTrophies.items[2].trophies}
-          </Text>
-        )}
-        {topTrophies.items != undefined && (
-          <Text style={styles.statTxt}>
-            {topTrophies.items[1].name + ":  " + topTrophies.items[1].trophies}
-          </Text>
-        )}
-        {topTrophies.items != undefined && (
-          <Text style={styles.statTxt}>
-            {topTrophies.items[2].name + ":  " + topTrophies.items[2].trophies}
-          </Text>
-        )}
-        {topTrophies.items != undefined && (
-          <Text style={styles.statTxt}>
-            {topTrophies.items[3].name + ":  " + topTrophies.items[3].trophies}
-          </Text>
-        )}
-        {topTrophies.items != undefined && (
-          <Text style={styles.statTxt}>
-            {topTrophies.items[4].name + ":  " + topTrophies.items[4].trophies}
-          </Text>
-        )}
-      </View>
+
+        <View width={10} marginRight={10}></View>
+
+        {/* Top 5 players by versus trophies */}
+        <View style={styles.catergoryContainer}>
+          <View style={styles.catergoryHeadingContainer}>
+            <Text style={styles.catergoryHeading}>
+              <Image
+                style={styles.trophieImg}
+                source={require("../assets/versus-trophy.jpg")}
+              />{" "}
+              Versus Trophies
+            </Text>
+          </View>
+          {/* Name and trophies */}
+          {topVersusTrophies.items != undefined && (
+            <Text style={styles.statTxt}>
+              {topVersusTrophies.items[0].name +
+                ":  " +
+                topVersusTrophies.items[2].versusTrophies}
+            </Text>
+          )}
+          {topVersusTrophies.items != undefined && (
+            <Text style={styles.statTxt}>
+              {topVersusTrophies.items[1].name +
+                ":  " +
+                topVersusTrophies.items[1].versusTrophies}
+            </Text>
+          )}
+          {topVersusTrophies.items != undefined && (
+            <Text style={styles.statTxt}>
+              {topVersusTrophies.items[2].name +
+                ":  " +
+                topVersusTrophies.items[2].versusTrophies}
+            </Text>
+          )}
+          {topVersusTrophies.items != undefined && (
+            <Text style={styles.statTxt}>
+              {topVersusTrophies.items[3].name +
+                ":  " +
+                topVersusTrophies.items[3].versusTrophies}
+            </Text>
+          )}
+          {topVersusTrophies.items != undefined && (
+            <Text style={styles.statTxt}>
+              {topVersusTrophies.items[4].name +
+                ":  " +
+                topVersusTrophies.items[4].versusTrophies}
+            </Text>
+          )}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -103,6 +171,11 @@ const GlobalPlayerRanking = () => {
 export default GlobalPlayerRanking;
 
 const styles = StyleSheet.create({
+  flatList: {
+    height: "100%",
+    width: "100%",
+  },
+
   statTxt: {
     color: "white",
     fontSize: "14px",
@@ -152,13 +225,13 @@ const styles = StyleSheet.create({
   },
 
   catergoryContainer: {
+    height: 260,
+    width: 180,
     backgroundColor: "#333333",
-    width: "50%",
-    height: "50%",
-    paddingTop: 5,
     borderWidth: 1,
     borderRadius: 4,
     borderColor: "gray",
+    padding: 10,
     ...Platform.select({
       ios: {},
       android: {},
@@ -185,14 +258,15 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: "26px",
     textAlign: "center",
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: 15,
+    marginBottom: 15,
     ...Platform.select({
       ios: {},
       android: {},
       default: {
         fontSize: "28px",
-        marginBottom: 15,
+        marginTop: 20,
+        marginBottom: 20,
       },
     }),
   },
