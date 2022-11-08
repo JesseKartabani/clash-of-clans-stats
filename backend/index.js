@@ -55,8 +55,28 @@ app.get("/versusTop5", async (req, res) => {
 
 // Get user search input
 app.post("/userSearch", function (req, res) {
-  var newSearch = req.body;
-  console.log(newSearch);
+  var newSearch = req.body.token;
+  res.send(newSearch);
+
+  app.get("/userSearch", async (req, res) => {
+    try {
+      const response = await fetch(
+        `https://api.clashofclans.com/v1/players/%23${newSearch}`,
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${API_TOKEN}`,
+          },
+        }
+      );
+      const json = await response.json();
+      const search = json;
+      res.send(search);
+      console.log(search);
+    } catch (error) {
+      console.error(error);
+    }
+  });
 });
 
 app.listen(port, () => {
