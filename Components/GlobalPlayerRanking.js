@@ -85,7 +85,7 @@ export default GlobalPlayerRanking;
 const styles = StyleSheet.create({
   statTxt: {
     color: "white",
-    fontSize: "16px",
+    fontSize: "14px",
     paddingLeft: 6,
     paddingBottom: 8,
     ...Platform.select({
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
 
   catergoryContainer: {
-    backgroundColor: "#5A5A5A",
+    backgroundColor: "#333333",
     width: "50%",
     height: "50%",
     paddingTop: 5,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   },
 
   container: {
-    backgroundColor: "#222222",
+    backgroundColor: "#111111",
     alignItems: "center",
     ...Platform.select({
       ios: {},
