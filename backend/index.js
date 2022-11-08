@@ -53,6 +53,12 @@ app.get("/versusTop5", async (req, res) => {
   }
 });
 
+// Get user search input
+app.post("/userSearch", function (req, res) {
+  var newSearch = req.body;
+  console.log(newSearch);
+});
+console.log(newSearch);
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
