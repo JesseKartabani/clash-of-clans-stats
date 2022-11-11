@@ -59,11 +59,7 @@ const GlobalPlayerRanking = () => {
       {/* Heading */}
       <Text style={styles.headingText}>Player Rankings</Text>
 
-      <ScrollView
-        centerContent={true}
-        horizontal={true}
-        style={styles.flatList}
-      >
+      <ScrollView style={styles.flatList}>
         {/* Top 5 players by trophies */}
         <View style={styles.catergoryContainer}>
           <View style={styles.catergoryHeadingContainer}>
@@ -112,8 +108,6 @@ const GlobalPlayerRanking = () => {
             </Text>
           )}
         </View>
-
-        <View width={10} marginRight={10}></View>
 
         {/* Top 5 players by versus trophies */}
         <View style={styles.catergoryContainer}>
@@ -172,14 +166,12 @@ export default GlobalPlayerRanking;
 
 const styles = StyleSheet.create({
   flatList: {
-    height: "100%",
-    width: "100%",
+    alignSelf: "center",
   },
 
   statTxt: {
     color: "white",
     fontSize: "14px",
-    paddingLeft: 6,
     paddingBottom: 8,
     ...Platform.select({
       ios: {},
@@ -193,7 +185,6 @@ const styles = StyleSheet.create({
 
   catergoryHeadingContainer: {
     alignItems: "center",
-    //flexDirection: "row",
     paddingBottom: 10,
   },
 
@@ -225,18 +216,20 @@ const styles = StyleSheet.create({
   },
 
   catergoryContainer: {
-    height: 260,
-    width: 180,
+    width: "80%",
+    height: "50%",
     backgroundColor: "#333333",
     borderWidth: 1,
     borderRadius: 4,
     borderColor: "gray",
     padding: 10,
+    alignSelf: "center",
+    marginBottom: 10,
     ...Platform.select({
       ios: {},
       android: {},
       default: {
-        width: "25%",
+        width: "80%",
         height: "50%",
       },
     }),
@@ -249,7 +242,7 @@ const styles = StyleSheet.create({
       ios: {},
       android: {},
       default: {
-        height: "100%",
+        height: "60%",
       },
     }),
   },
