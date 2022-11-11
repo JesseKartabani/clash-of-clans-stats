@@ -111,8 +111,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#222222",
     padding: 20,
     paddingTop: 10,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 10,
+    borderColor: "gray",
     alignItems: "center",
   },
 
@@ -121,8 +122,9 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft: 40,
     paddingRight: 40,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 10,
+    borderColor: "gray",
     color: "white",
     minWidth: 200,
     ...Platform.select({
