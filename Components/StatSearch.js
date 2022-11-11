@@ -23,9 +23,6 @@ const StatSearch = () => {
     if (input.length < 8) {
       alert("Tag too short");
       return;
-    }
-    if (input.includes("#") == true) {
-      setText(text.replace("#", ""));
     } else {
       postUserInput();
       navigation.navigate("Player Stats");
@@ -61,7 +58,9 @@ const StatSearch = () => {
             <TextInput
               style={styles.textInput}
               placeholder="#Y9C92G2C (enter Tag)"
-              onChangeText={(newText) => setText(newText.toUpperCase())}
+              onChangeText={(newText) =>
+                setText(newText.toUpperCase().replace("#", ""))
+              }
               defaultValue={text}
               placeholderTextColor="white"
               autoCapitalize="characters"
