@@ -5,18 +5,27 @@ import {
   SafeAreaView,
   Image,
   Platform,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const NavBar = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.background}>
       <SafeAreaView>
         <View style={styles.navBarContainer}>
-          <Image
-            style={styles.bannerLogo}
-            source={require("../assets/clashLogo.png")}
-          />
+          <TouchableOpacity
+            onPress={async () => {
+              navigation.navigate("Clash of Clans Stats");
+            }}
+          >
+            <Image
+              style={styles.bannerLogo}
+              source={require("../assets/clashLogo.png")}
+            />
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     </View>
@@ -31,7 +40,6 @@ const styles = StyleSheet.create({
   },
 
   bannerLogo: {
-    flex: 1,
     width: 120,
     height: 60,
     marginLeft: 30,
@@ -44,6 +52,7 @@ const styles = StyleSheet.create({
       },
       default: {
         width: 175,
+        height: 80,
       },
     }),
   },
@@ -54,7 +63,7 @@ const styles = StyleSheet.create({
       ios: {},
       android: {},
       default: {
-        height: 80,
+        height: 90,
       },
     }),
   },
