@@ -173,6 +173,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: "14px",
     paddingBottom: 8,
+    fontWeight: "500",
     ...Platform.select({
       ios: {},
       android: {},
