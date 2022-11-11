@@ -22,6 +22,7 @@ const StatSearch = () => {
   function checkUserInput(input) {
     if (input.length < 8) {
       alert("Tag too short");
+      return;
     }
     if (input.includes("#") == true) {
       setText(text.replace("#", ""));
