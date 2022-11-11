@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     textDecorationColor: "gray",
     fontWeight: "700",
+    fontSize: "18px",
   },
 
   heading: {
