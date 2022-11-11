@@ -7,7 +7,7 @@ const PlayerSummary = () => {
   const [userStats, setUserStats] = useState([]);
   const getUserStats = async () => {
     try {
-      const response = await fetch(`http://${IP}:4000/userSearch`, {
+      const response = await fetch(`http://${IP}:4000/userSearchResults`, {
         mode: "cors",
         headers: {
           "Content-type": "application/json",
