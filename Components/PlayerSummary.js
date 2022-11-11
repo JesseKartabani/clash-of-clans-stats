@@ -1,10 +1,18 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+  Image,
+} from "react-native";
 import React, { useState, useEffect } from "react";
 import { IP } from "@env";
 import { useNavigation } from "@react-navigation/native";
 
 const PlayerSummary = () => {
   const navigation = useNavigation();
+
   // Player data for users search
   const [userStats, setUserStats] = useState([]);
   const getUserStats = async () => {
@@ -34,16 +42,45 @@ const PlayerSummary = () => {
   }, []);
 
   return (
-    <View>
-      {userStats.name != undefined && (
-        <Text style={styles.statTxt}>
-          {userStats.name + ":  " + userStats.trophies}
-        </Text>
-      )}
-    </View>
+    <ImageBackground
+      style={styles.backgroundImg}
+      resizeMode="fit"
+      source={require("../assets/statSearchBackground.jpeg")}
+    >
+      <View>
+        <Image style={styles.kingImg} source={require("../assets/king.png")} />
+        {userStats.name != undefined && (
+          <Text style={styles.statTxt}>
+            {userStats.name + ":  " + userStats.trophies}
+          </Text>
+        )}
+      </View>
+    </ImageBackground>
   );
 };
 
 export default PlayerSummary;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  backgroundImg: {
+    width: "100%",
+    height: 300,
+    ...Platform.select({
+      ios: {},
+      android: {},
+      default: {
+        height: 500,
+      },
+    }),
+  },
+
+  kingImg: {
+    width: 200,
+    height: 200,
+    ...Platform.select({
+      ios: {},
+      android: {},
+      default: {},
+    }),
+  },
+});
