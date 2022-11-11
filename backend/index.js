@@ -3,6 +3,7 @@ import fetch from "node-fetch";
 import cors from "cors";
 import mongoose from "mongoose";
 
+// mongo db setup
 mongoose.connect(
   "mongodb+srv://clashOfStats:Qa4JEvs0OQOiCWjv@cluster0.8op1t9g.mongodb.net/?retryWrites=true&w=majority",
   {
@@ -70,7 +71,7 @@ app.get("/versusTop5", async (req, res) => {
   }
 });
 
-// Get user search input
+// Get user search input and send it to data base
 app.post("/userSearch", function (req, res) {
   const newSearch = req.body.token;
   Token.findByIdAndUpdate(
@@ -82,31 +83,31 @@ app.post("/userSearch", function (req, res) {
   );
 });
 
-// Use search input to get individual player data
+// Use search input from mongo db to get individual player data
 app.get("/userSearchResults", async (req, res) => {
   const userSearch = db
     .collection("tokens")
     .find()
-    .toArray(function (err, results) {
-      console.log(results[0].token);
-    });
-  try {
-    const response = await fetch(
-      `https://api.clashofclans.com/v1/players/%23${results[0].token}`,
-      {
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${API_TOKEN}`,
-        },
+    .toArray(async (err, results) => {
+      const newSearch = results[0].token;
+      try {
+        const response = await fetch(
+          `https://api.clashofclans.com/v1/players/%23${newSearch}`,
+          {
+            headers: {
+              "Content-type": "application/json",
+              Authorization: `Bearer ${API_TOKEN}`,
+            },
+          }
+        );
+        const json = await response.json();
+        const search = json;
+        res.send(search);
+        console.log(search);
+      } catch (error) {
+        console.error(error);
       }
-    );
-    const json = await response.json();
-    const search = json;
-    res.send(search);
-    console.log(search);
-  } catch (error) {
-    console.error(error);
-  }
+    });
 });
 
 app.listen(port, () => {
