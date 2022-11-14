@@ -172,14 +172,13 @@ const styles = StyleSheet.create({
   statTxt: {
     color: "white",
     fontSize: "14px",
-    paddingBottom: 8,
+    paddingBottom: 10,
     fontWeight: "500",
     ...Platform.select({
       ios: {},
       android: {},
       default: {
         fontSize: "18px",
-        marginBottom: 10,
       },
     }),
   },
@@ -217,22 +216,19 @@ const styles = StyleSheet.create({
   },
 
   catergoryContainer: {
-    width: "80%",
+    width: "100%",
     height: "50%",
     backgroundColor: "#333333",
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 4,
     borderColor: "gray",
-    padding: 10,
+    padding: 15,
     alignSelf: "center",
     marginBottom: 10,
     ...Platform.select({
       ios: {},
       android: {},
-      default: {
-        width: "80%",
-        height: "50%",
-      },
+      default: {},
     }),
   },
 
