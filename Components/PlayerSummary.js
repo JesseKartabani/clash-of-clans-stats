@@ -44,16 +44,26 @@ const PlayerSummary = () => {
   return (
     <ImageBackground
       style={styles.backgroundImg}
-      resizeMode="fit"
       source={require("../assets/statSearchBackground.jpeg")}
     >
-      <View>
+      <View style={styles.container}>
+        {/* Barbarian king image */}
         <Image style={styles.kingImg} source={require("../assets/king.png")} />
-        {userStats.name != undefined && (
-          <Text style={styles.statTxt}>
-            {userStats.name + ":  " + userStats.trophies}
-          </Text>
-        )}
+
+        {/* Player name */}
+        <View>
+          {userStats.name != undefined && (
+            <Text style={styles.playerName}>{userStats.name}</Text>
+          )}
+        </View>
+
+        <View style={styles.row}>
+          {userStats.name != undefined && (
+            <Text style={styles.statTxt}>
+              {userStats.name + ":  " + userStats.trophies}
+            </Text>
+          )}
+        </View>
       </View>
     </ImageBackground>
   );
@@ -62,6 +72,28 @@ const PlayerSummary = () => {
 export default PlayerSummary;
 
 const styles = StyleSheet.create({
+  playerName: {
+    fontSize: "30px",
+    color: "white",
+    fontWeight: "600",
+    ...Platform.select({
+      ios: {},
+      android: {},
+      default: {
+        fontSize: "40px",
+      },
+    }),
+  },
+
+  container: {
+    alignItems: "center",
+    paddingTop: 10,
+  },
+
+  row: {
+    flexDirection: "row",
+  },
+
   backgroundImg: {
     width: "100%",
     height: 300,
@@ -75,12 +107,17 @@ const styles = StyleSheet.create({
   },
 
   kingImg: {
-    width: 200,
-    height: 200,
+    //flex: 1,
+    height: 100,
+    width: 100,
+    resizeMode: "contain",
     ...Platform.select({
       ios: {},
       android: {},
-      default: {},
+      default: {
+        height: 175,
+        width: 175,
+      },
     }),
   },
 });
