@@ -65,8 +65,8 @@ const PlayerSummary = () => {
 
         {/* First row */}
         <View style={styles.row}>
+          {/* Player town hall level */}
           <Menu>
-            {/* Player town hall level */}
             <MenuTrigger>
               <View style={styles.menuTriggerContainer}>
                 <Image
@@ -88,8 +88,8 @@ const PlayerSummary = () => {
             </MenuOptions>
           </Menu>
 
+          {/* Player builder hall level */}
           <Menu>
-            {/* Player builder hall level */}
             <MenuTrigger>
               <View style={styles.menuTriggerContainer}>
                 <Image
@@ -107,6 +107,27 @@ const PlayerSummary = () => {
             <MenuOptions style={styles.menuOptions}>
               <MenuOption>
                 <Text style={styles.popupText}>Builder Town Hall Level</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+
+          {/* Name of clan player is in */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/clanBanner.png")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>{userStats.clan.name}</Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>Clan</Text>
               </MenuOption>
             </MenuOptions>
           </Menu>
