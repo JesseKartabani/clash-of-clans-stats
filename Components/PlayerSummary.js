@@ -132,6 +132,95 @@ const PlayerSummary = () => {
             </MenuOptions>
           </Menu>
         </View>
+
+        {/* Second row */}
+        <View style={styles.row}>
+          {/* Players experience level */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/experience.png")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>{userStats.expLevel}</Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>Experience Level</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+
+          {/* Players war stars */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/whiteStar.png")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>{userStats.warStars}</Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>War Stars</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+
+          {/* Players trophies */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/trophy.jpg")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>{userStats.trophies}</Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>Trophies</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+
+          {/* Players legend trophies */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/legendTrophie.png")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>
+                    {userStats.legendStatistics.legendTrophies}
+                  </Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>Legend Trophies</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+        </View>
       </View>
     </ImageBackground>
   );
