@@ -307,6 +307,51 @@ const PlayerSummary = () => {
             </MenuOptions>
           </Menu>
         </View>
+
+        {/* Fourth row */}
+        <View style={styles.row}>
+          {/* Player attack wins */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/crossingSwords.svg")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>{userStats.attackWins}</Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>Attack Wins</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+
+          {/* Players defense wins */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/shield.svg")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>{userStats.defenseWins}</Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>Defense Wins</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+        </View>
       </View>
     </ImageBackground>
   );
