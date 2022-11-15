@@ -14,6 +14,7 @@ import {
   MenuTrigger,
 } from "react-native-popup-menu";
 import { IP } from "@env";
+import { Icon } from "@rneui/base";
 import { useNavigation } from "@react-navigation/native";
 
 const PlayerSummary = () => {
@@ -217,6 +218,91 @@ const PlayerSummary = () => {
             <MenuOptions style={styles.menuOptions}>
               <MenuOption>
                 <Text style={styles.popupText}>Legend Trophies</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+        </View>
+
+        {/* third row */}
+        <View style={styles.row}>
+          {/* Players versus trophies */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/versus-trophy.jpg")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>{userStats.versusTrophies}</Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>Versus Trophies</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+
+          {/* Troop dontated by player */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Icon name="arrowup" color="white" type="antdesign" />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>{userStats.donations}</Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>Troops Donated</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+
+          {/* Players donations received */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Icon name="arrowdown" color="white" type="antdesign" />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>
+                    {userStats.donationsReceived}
+                  </Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>Donations Received</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+
+          {/* Players versus battle wins */}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/crossingSwords.svg")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>
+                    {userStats.versusBattleWins}
+                  </Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions style={styles.menuOptions}>
+              <MenuOption>
+                <Text style={styles.popupText}>Versus Battle Wins</Text>
               </MenuOption>
             </MenuOptions>
           </Menu>
