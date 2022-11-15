@@ -81,12 +81,13 @@ const PlayerSummary = () => {
               </View>
             </MenuTrigger>
 
-            <MenuOptions>
+            <MenuOptions style={styles.menuOptions}>
               <MenuOption>
                 <Text style={styles.popupText}>Town Hall Level</Text>
               </MenuOption>
             </MenuOptions>
           </Menu>
+
           <Menu>
             {/* Player builder hall level */}
             <MenuTrigger>
@@ -103,7 +104,7 @@ const PlayerSummary = () => {
               </View>
             </MenuTrigger>
 
-            <MenuOptions>
+            <MenuOptions style={styles.menuOptions}>
               <MenuOption>
                 <Text style={styles.popupText}>Builder Town Hall Level</Text>
               </MenuOption>
@@ -118,9 +119,18 @@ const PlayerSummary = () => {
 export default PlayerSummary;
 
 const styles = StyleSheet.create({
-  statTxt: {
+  popupText: {
     color: "white",
+    textAlign: "center",
+  },
+
+  menuOptions: {
+    backgroundColor: "black",
+  },
+
+  statTxt: {
     fontSize: "18px",
+    color: "white",
   },
 
   menuTriggerContainer: {
