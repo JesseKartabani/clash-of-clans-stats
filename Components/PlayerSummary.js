@@ -105,7 +105,7 @@ const PlayerSummary = () => {
 
             <MenuOptions>
               <MenuOption>
-                <Text style={styles.popupText}>Town Hall Level</Text>
+                <Text style={styles.popupText}>Builder Town Hall Level</Text>
               </MenuOption>
             </MenuOptions>
           </Menu>
