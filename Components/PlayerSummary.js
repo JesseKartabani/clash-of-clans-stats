@@ -93,7 +93,7 @@ const PlayerSummary = () => {
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
-                  source={require("../assets/townHall.png")}
+                  source={require("../assets/builderHall.png")}
                 />
                 {userStats.name != undefined && (
                   <Text style={styles.statTxt}>
