@@ -63,9 +63,10 @@ const PlayerSummary = () => {
           )}
         </View>
 
-        {/* Player town hall level */}
+        {/* First row */}
         <View style={styles.row}>
           <Menu>
+            {/* Player town hall level */}
             <MenuTrigger>
               <View style={styles.menuTriggerContainer}>
                 <Image
@@ -75,6 +76,28 @@ const PlayerSummary = () => {
                 {userStats.name != undefined && (
                   <Text style={styles.statTxt}>
                     {"TH " + userStats.townHallLevel}
+                  </Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions>
+              <MenuOption>
+                <Text style={styles.popupText}>Town Hall Level</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
+          <Menu>
+            {/* Player builder hall level */}
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/townHall.png")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>
+                    {"BH " + userStats.builderHallLevel}
                   </Text>
                 )}
               </View>
@@ -97,19 +120,20 @@ export default PlayerSummary;
 const styles = StyleSheet.create({
   statTxt: {
     color: "white",
-    font: "20px",
+    fontSize: "18px",
   },
 
   menuTriggerContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#7e57c2",
-    borderRadius: 15,
-    borderColor: "#7e57c2",
     padding: 2,
     paddingLeft: 6,
     paddingRight: 6,
-    margin: 8,
+    margin: 2,
+    marginTop: 8,
+    backgroundColor: "#7e57c2",
+    borderRadius: 15,
+    borderColor: "#7e57c2",
   },
 
   icons: {
