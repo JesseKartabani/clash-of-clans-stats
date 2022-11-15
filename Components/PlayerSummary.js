@@ -7,6 +7,12 @@ import {
   Image,
 } from "react-native";
 import React, { useState, useEffect } from "react";
+import {
+  Menu,
+  MenuOption,
+  MenuOptions,
+  MenuTrigger,
+} from "react-native-popup-menu";
 import { IP } from "@env";
 import { useNavigation } from "@react-navigation/native";
 
@@ -57,12 +63,29 @@ const PlayerSummary = () => {
           )}
         </View>
 
+        {/* Player town hall level */}
         <View style={styles.row}>
-          {userStats.name != undefined && (
-            <Text style={styles.statTxt}>
-              {userStats.name + ":  " + userStats.trophies}
-            </Text>
-          )}
+          <Menu>
+            <MenuTrigger>
+              <View style={styles.menuTriggerContainer}>
+                <Image
+                  style={styles.icons}
+                  source={require("../assets/townHall.png")}
+                />
+                {userStats.name != undefined && (
+                  <Text style={styles.statTxt}>
+                    {"TH " + userStats.townHallLevel}
+                  </Text>
+                )}
+              </View>
+            </MenuTrigger>
+
+            <MenuOptions>
+              <MenuOption>
+                <Text style={styles.popupText}>Town Hall Level</Text>
+              </MenuOption>
+            </MenuOptions>
+          </Menu>
         </View>
       </View>
     </ImageBackground>
@@ -72,6 +95,28 @@ const PlayerSummary = () => {
 export default PlayerSummary;
 
 const styles = StyleSheet.create({
+  statTxt: {
+    color: "white",
+    font: "20px",
+  },
+
+  menuTriggerContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#7e57c2",
+    borderRadius: 15,
+    borderColor: "#7e57c2",
+    padding: 2,
+    paddingLeft: 6,
+    paddingRight: 6,
+    margin: 8,
+  },
+
+  icons: {
+    width: 24,
+    height: 24,
+  },
+
   playerName: {
     fontSize: "30px",
     color: "white",
