@@ -225,11 +225,6 @@ const styles = StyleSheet.create({
     padding: 15,
     alignSelf: "center",
     marginBottom: 10,
-    ...Platform.select({
-      ios: {},
-      android: {},
-      default: {},
-    }),
   },
 
   container: {
@@ -239,7 +234,7 @@ const styles = StyleSheet.create({
       ios: {},
       android: {},
       default: {
-        height: "60%",
+        height: "65%",
       },
     }),
   },
