@@ -68,7 +68,7 @@ const PlayerSummary = () => {
         <View style={styles.row}>
           {/* Player town hall level */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundPurple}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -91,7 +91,7 @@ const PlayerSummary = () => {
 
           {/* Player builder hall level */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundPurple}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -114,7 +114,7 @@ const PlayerSummary = () => {
 
           {/* Name of clan player is in */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundPurple}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -138,7 +138,7 @@ const PlayerSummary = () => {
         <View style={styles.row}>
           {/* Players experience level */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundBlue}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -159,7 +159,7 @@ const PlayerSummary = () => {
 
           {/* Players war stars */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundBlue}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -180,7 +180,7 @@ const PlayerSummary = () => {
 
           {/* Players trophies */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundBlue}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -201,7 +201,7 @@ const PlayerSummary = () => {
 
           {/* Players legend trophies */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundBlue}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -227,7 +227,7 @@ const PlayerSummary = () => {
         <View style={styles.row}>
           {/* Players versus trophies */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundBlue}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -248,7 +248,7 @@ const PlayerSummary = () => {
 
           {/* Troop dontated by player */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundGreen}>
               <View style={styles.menuTriggerContainer}>
                 <Icon name="arrowup" color="white" type="antdesign" />
                 {userStats.name != undefined && (
@@ -266,7 +266,7 @@ const PlayerSummary = () => {
 
           {/* Players donations received */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundRed}>
               <View style={styles.menuTriggerContainer}>
                 <Icon name="arrowdown" color="white" type="antdesign" />
                 {userStats.name != undefined && (
@@ -286,7 +286,7 @@ const PlayerSummary = () => {
 
           {/* Players versus battle wins */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundBlue}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -312,7 +312,7 @@ const PlayerSummary = () => {
         <View style={styles.row}>
           {/* Player attack wins */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundDarkBlue}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -333,7 +333,7 @@ const PlayerSummary = () => {
 
           {/* Players defense wins */}
           <Menu>
-            <MenuTrigger>
+            <MenuTrigger style={styles.menuTriggerBackgroundDarkBlue}>
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
@@ -360,6 +360,41 @@ const PlayerSummary = () => {
 export default PlayerSummary;
 
 const styles = StyleSheet.create({
+  menuTriggerBackgroundDarkBlue: {
+    backgroundColor: "#455a64",
+    borderRadius: 15,
+    borderColor: "#455a64",
+    margin: 3,
+  },
+
+  menuTriggerBackgroundGreen: {
+    backgroundColor: "#4caf50",
+    borderRadius: 15,
+    borderColor: "#4caf50",
+    margin: 3,
+  },
+
+  menuTriggerBackgroundRed: {
+    backgroundColor: "red",
+    borderRadius: 15,
+    borderColor: "red",
+    margin: 3,
+  },
+
+  menuTriggerBackgroundBlue: {
+    backgroundColor: "#2196f3",
+    borderRadius: 15,
+    borderColor: "#2196f3",
+    margin: 3,
+  },
+
+  menuTriggerBackgroundPurple: {
+    backgroundColor: "#7e57c2",
+    borderRadius: 15,
+    borderColor: "#7e57c2",
+    margin: 3,
+  },
+
   popupText: {
     color: "white",
     textAlign: "center",
@@ -381,10 +416,6 @@ const styles = StyleSheet.create({
     paddingLeft: 6,
     paddingRight: 6,
     margin: 2,
-    marginTop: 8,
-    backgroundColor: "#7e57c2",
-    borderRadius: 15,
-    borderColor: "#7e57c2",
   },
 
   icons: {
