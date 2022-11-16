@@ -290,7 +290,7 @@ const PlayerSummary = () => {
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
-                  source={require("../assets/crossingSwords.svg")}
+                  source={require("../assets/crossingSwords.png")}
                 />
                 {userStats.name != undefined && (
                   <Text style={styles.statTxt}>
@@ -316,7 +316,7 @@ const PlayerSummary = () => {
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
-                  source={require("../assets/crossingSwords.svg")}
+                  source={require("../assets/crossingSwords.png")}
                 />
                 {userStats.name != undefined && (
                   <Text style={styles.statTxt}>{userStats.attackWins}</Text>
@@ -337,7 +337,7 @@ const PlayerSummary = () => {
               <View style={styles.menuTriggerContainer}>
                 <Image
                   style={styles.icons}
-                  source={require("../assets/shield.svg")}
+                  source={require("../assets/shield.jpg")}
                 />
                 {userStats.name != undefined && (
                   <Text style={styles.statTxt}>{userStats.defenseWins}</Text>
