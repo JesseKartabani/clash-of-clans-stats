@@ -362,28 +362,28 @@ export default PlayerSummary;
 const styles = StyleSheet.create({
   menuTriggerBackgroundDarkBlue: {
     backgroundColor: "#455a64",
-    borderRadius: 15,
+    borderRadius: 5,
     borderColor: "#455a64",
     margin: 3,
   },
 
   menuTriggerBackgroundGreen: {
     backgroundColor: "#4caf50",
-    borderRadius: 15,
+    borderRadius: 5,
     borderColor: "#4caf50",
     margin: 3,
   },
 
   menuTriggerBackgroundRed: {
     backgroundColor: "red",
-    borderRadius: 15,
+    borderRadius: 5,
     borderColor: "red",
     margin: 3,
   },
 
   menuTriggerBackgroundBlue: {
     backgroundColor: "#2196f3",
-    borderRadius: 15,
+    borderRadius: 5,
     borderColor: "#2196f3",
     margin: 3,
   },
