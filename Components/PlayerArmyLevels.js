@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Platform } from "react-native";
+import { StyleSheet, Text, View, Platform, Image } from "react-native";
 import React, { useState, useEffect } from "react";
 import { IP } from "@env";
 
@@ -37,8 +37,18 @@ const PlayerArmyLevels = () => {
 
       {/* All players heroes levels */}
       <View style={styles.container}>
-        <Text>aaa</Text>
-        <Text>bbb</Text>
+        {/* Barbarian king */}
+        <Text>
+          <Image
+            style={styles.images}
+            source={require("../assets/heroes/barbarianHero.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[0].level}</Text>
+            )}
+          </View>
+        </Text>
       </View>
     </View>
   );
@@ -47,9 +57,27 @@ const PlayerArmyLevels = () => {
 export default PlayerArmyLevels;
 
 const styles = StyleSheet.create({
+  border: {
+    backgroundColor: "#01579b",
+    borderRadius: 10,
+    borderColor: "#01579b",
+  },
+
+  statText: {
+    color: "white",
+    fontSize: "12px",
+  },
+
+  images: {
+    height: 38,
+    width: 38,
+    borderRadius: 20,
+  },
+
   container: {
     backgroundColor: "#222",
     flexDirection: "row",
+    paddingLeft: 12,
   },
 
   subHeadingText: {
@@ -59,6 +87,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFFB3",
     fontSize: "16px",
     backgroundColor: "#222",
+    fontWeight: "700",
   },
 
   headingContainer: {
