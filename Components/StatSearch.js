@@ -115,6 +115,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "gray",
     alignItems: "center",
+    ...Platform.select({
+      ios: {
+        width: "80%",
+      },
+      android: {
+        width: "80%",
+      },
+      default: {},
+    }),
   },
 
   textInput: {
@@ -126,14 +135,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "gray",
     color: "white",
-    minWidth: 200,
+    width: "100%",
     ...Platform.select({
       ios: {},
       android: {},
       default: {
         padding: 15,
-        paddingLeft: 75,
-        paddingRight: 75,
       },
     }),
   },
