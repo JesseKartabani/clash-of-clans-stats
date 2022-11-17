@@ -659,6 +659,187 @@ const PlayerArmyLevels = () => {
           </View>
         </Text>
       </ScrollView>
+
+      {/* Spells sub heading */}
+      <Text style={styles.subHeadingText}>Spells</Text>
+
+      {/* All players spells levels */}
+      <ScrollView
+        style={styles.container}
+        centerContent={true}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        paddingTop={5}
+      >
+        {/* Lightning spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/lightningSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[0].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Healing spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/healingSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[1].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Rage spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/rageSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[2].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Jump spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/jumpSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[3].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Freeze spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/freezeSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[4].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Clone spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/cloneSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[8].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Invisibility spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/invisibilitySpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[11].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Recall spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/recallSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[12].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Poison spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/poisonSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[5].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Earthquake spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/earthquakeSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[6].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Haste spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/hasteSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[7].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Skeleton spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/skeletonSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[9].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Bat spell */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/spells/batSpell.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.spells[10].level}</Text>
+            )}
+          </View>
+        </Text>
+      </ScrollView>
     </View>
   );
 };
@@ -694,8 +875,8 @@ const styles = StyleSheet.create({
 
   subHeadingText: {
     paddingLeft: 15,
-    paddingTop: 6,
-    paddingBottom: 6,
+    paddingTop: 10,
+    paddingBottom: 10,
     color: "#FFFFFFB3",
     fontSize: "16px",
     backgroundColor: "#222",
