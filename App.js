@@ -18,6 +18,7 @@ export default function App() {
               component={HomeScreen}
               options={{
                 headerShown: false,
+                cardStyle: { backgroundColor: "#111111" },
               }}
             />
             <Stack.Screen
