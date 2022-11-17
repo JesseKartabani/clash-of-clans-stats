@@ -38,14 +38,27 @@ const PlayerArmyLevels = () => {
       {/* All players heroes levels */}
       <View style={styles.container}>
         {/* Barbarian king */}
-        <Text>
+        <Text style={styles.unitContainer}>
           <Image
             style={styles.images}
             source={require("../assets/heroes/barbarianHero.png")}
           />
           <View style={styles.border}>
             {userStats.name != undefined && (
-              <Text style={styles.statText}>{userStats.troops[0].level}</Text>
+              <Text style={styles.statText}>{userStats.heroes[0].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Archer queen*/}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/heroes/archerHero.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.heroes[1].level}</Text>
             )}
           </View>
         </Text>
@@ -57,15 +70,23 @@ const PlayerArmyLevels = () => {
 export default PlayerArmyLevels;
 
 const styles = StyleSheet.create({
+  unitContainer: {
+    marginRight: 10,
+  },
+
   border: {
     backgroundColor: "#01579b",
     borderRadius: 10,
     borderColor: "#01579b",
+    paddingLeft: 6,
+    paddingRight: 6,
   },
 
   statText: {
     color: "white",
     fontSize: "12px",
+    textAlign: "center",
+    fontWeight: "700",
   },
 
   images: {
@@ -77,11 +98,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#222",
     flexDirection: "row",
-    paddingLeft: 12,
+    paddingLeft: 15,
   },
 
   subHeadingText: {
-    paddingLeft: 12,
+    paddingLeft: 15,
     paddingTop: 6,
     paddingBottom: 6,
     color: "#FFFFFFB3",
