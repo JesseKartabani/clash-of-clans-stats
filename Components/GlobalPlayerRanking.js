@@ -125,7 +125,7 @@ const GlobalPlayerRanking = () => {
             <Text style={styles.statTxt}>
               {topVersusTrophies.items[0].name +
                 ":  " +
-                topVersusTrophies.items[2].versusTrophies}
+                topVersusTrophies.items[0].versusTrophies}
             </Text>
           )}
           {topVersusTrophies.items != undefined && (
