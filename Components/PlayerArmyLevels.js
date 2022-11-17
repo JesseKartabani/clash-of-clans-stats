@@ -37,7 +37,7 @@ const PlayerArmyLevels = () => {
 
       {/* All players heroes levels */}
       <View style={styles.container}>
-        {/* Barbarian king */}
+        {/* Barbarian king hero */}
         <Text style={styles.unitContainer}>
           <Image
             style={styles.images}
@@ -50,7 +50,7 @@ const PlayerArmyLevels = () => {
           </View>
         </Text>
 
-        {/* Archer queen*/}
+        {/* Archer queen hero*/}
         <Text style={styles.unitContainer}>
           <Image
             style={styles.images}
@@ -59,6 +59,45 @@ const PlayerArmyLevels = () => {
           <View style={styles.border}>
             {userStats.name != undefined && (
               <Text style={styles.statText}>{userStats.heroes[1].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Grand warden hero*/}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/heroes/grandWardenHero.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.heroes[2].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Royal champion hero*/}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/heroes/royalChampionHero.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.heroes[4].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Battle machine hero*/}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/heroes/battleMachineHero.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.heroes[3].level}</Text>
             )}
           </View>
         </Text>
@@ -71,7 +110,7 @@ export default PlayerArmyLevels;
 
 const styles = StyleSheet.create({
   unitContainer: {
-    marginRight: 10,
+    marginRight: 5,
   },
 
   border: {
