@@ -25,6 +25,7 @@ export default function App() {
               component={PlayerStats}
               options={{
                 headerShown: false,
+                cardStyle: { backgroundColor: "#222" },
               }}
             />
           </Stack.Navigator>
