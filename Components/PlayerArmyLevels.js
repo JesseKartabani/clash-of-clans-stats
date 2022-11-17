@@ -45,7 +45,6 @@ const PlayerArmyLevels = () => {
       {/* All players heroes levels */}
       <ScrollView
         style={styles.container}
-        centerContent={true}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         paddingTop={5}
@@ -122,7 +121,6 @@ const PlayerArmyLevels = () => {
       {/* All players pets levels */}
       <ScrollView
         style={styles.container}
-        centerContent={true}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         paddingTop={5}
@@ -238,7 +236,6 @@ const PlayerArmyLevels = () => {
       {/* All players troops levels */}
       <ScrollView
         style={styles.container}
-        centerContent={true}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         paddingTop={5}
@@ -666,7 +663,6 @@ const PlayerArmyLevels = () => {
       {/* All players spells levels */}
       <ScrollView
         style={styles.container}
-        centerContent={true}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         paddingTop={5}
@@ -871,10 +867,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#222",
     flexDirection: "row",
+    paddingLeft: 20,
   },
 
   subHeadingText: {
-    paddingLeft: 15,
+    paddingLeft: 20,
     paddingTop: 10,
     paddingBottom: 10,
     color: "#FFFFFFB3",
