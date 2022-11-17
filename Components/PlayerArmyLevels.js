@@ -231,6 +231,434 @@ const PlayerArmyLevels = () => {
           </View>
         </Text>
       </ScrollView>
+
+      {/* Troops sub heading */}
+      <Text style={styles.subHeadingText}>Troops</Text>
+
+      {/* All players troops levels */}
+      <ScrollView
+        style={styles.container}
+        centerContent={true}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        paddingTop={5}
+      >
+        {/* Barbarian troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/barbarianTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[0].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Archer troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/archerTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[1].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Goblin troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/goblinTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[2].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Giant troop*/}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/giantTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[3].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Wall breaker troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/wallBreakerTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[4].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Balloon troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/balloonTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[5].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Wizard troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/wizardTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[6].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Healer troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/healerTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[7].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Dragon troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/dragonTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[8].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Pekka troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/pekkaTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[9].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Baby dragon troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/babyDragonTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[17].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Miner troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/minerTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[18].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Electro dragon troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/electroDragonTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[39].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Yeti troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/yetiTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[35].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Dragon rider troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/dragonRiderTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[43].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Minion troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/minionTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[10].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Hog rider troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/hogRiderTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[11].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Valkyrie troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/valkyrieTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[12].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Golem troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/golemTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[13].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Witch troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/witchTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[14].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Lava hound troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/lavaHoundTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[15].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Bowler troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/bowlerTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[16].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Ice golem troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/iceGolemTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[38].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Head hunter troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/headHunterTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[50].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Electro titan troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/electroTitanTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[56].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Wall wrecker troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/wallWreckerTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[33].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Battle blimp troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/battleBlimpTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[34].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Stone slammer troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/stoneSlammerTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[40].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Siege barracks troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/siegeBarracksTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[46].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Log launcher troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/logLauncherTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[53].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Flame flinger troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/flameFlingerTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[54].level}</Text>
+            )}
+          </View>
+        </Text>
+
+        {/* Battle drill troop */}
+        <Text style={styles.unitContainer}>
+          <Image
+            style={styles.images}
+            source={require("../assets/troops/battleDrillTroop.png")}
+          />
+          <View style={styles.border}>
+            {userStats.name != undefined && (
+              <Text style={styles.statText}>{userStats.troops[55].level}</Text>
+            )}
+          </View>
+        </Text>
+      </ScrollView>
     </View>
   );
 };
@@ -242,8 +670,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#01579b",
     borderRadius: 10,
     borderColor: "#01579b",
-    paddingLeft: 6,
-    paddingRight: 6,
+    paddingLeft: 4,
+    paddingRight: 4,
   },
 
   statText: {
