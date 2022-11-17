@@ -167,6 +167,8 @@ export default GlobalPlayerRanking;
 const styles = StyleSheet.create({
   flatList: {
     alignSelf: "center",
+    width: "90%",
+    maxWidth: 600,
   },
 
   statTxt: {
@@ -216,7 +218,7 @@ const styles = StyleSheet.create({
   },
 
   catergoryContainer: {
-    width: "70%",
+    width: "85%",
     backgroundColor: "#333333",
     borderWidth: 2,
     borderRadius: 4,
@@ -227,6 +229,7 @@ const styles = StyleSheet.create({
   },
 
   container: {
+    width: "100%",
     backgroundColor: "#111111",
     alignItems: "center",
     ...Platform.select({
