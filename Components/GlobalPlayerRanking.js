@@ -76,7 +76,7 @@ const GlobalPlayerRanking = () => {
             <Text style={styles.statTxt}>
               {topTrophies.items[0].name +
                 ":  " +
-                topTrophies.items[2].trophies}
+                topTrophies.items[0].trophies}
             </Text>
           )}
           {topTrophies.items != undefined && (
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
   },
 
   catergoryContainer: {
-    width: "85%",
+    width: "100%",
     backgroundColor: "#333333",
     borderWidth: 2,
     borderRadius: 4,
