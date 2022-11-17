@@ -216,8 +216,7 @@ const styles = StyleSheet.create({
   },
 
   catergoryContainer: {
-    width: "100%",
-    height: "50%",
+    width: "70%",
     backgroundColor: "#333333",
     borderWidth: 2,
     borderRadius: 4,
@@ -233,9 +232,7 @@ const styles = StyleSheet.create({
     ...Platform.select({
       ios: {},
       android: {},
-      default: {
-        height: "65%",
-      },
+      default: {},
     }),
   },
 
