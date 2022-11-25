@@ -8,50 +8,28 @@ import {
   ScrollView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { IP } from "@env";
+import { fetchTopTrophies } from "../fetchers/stats";
+import { fetchTopVersusTrophies } from "../fetchers/stats";
 
 const GlobalPlayerRanking = () => {
-  // fetch top 5 players based off trophies globally
+  const [topVersusTrophies, setTopVersusTrophies] = useState([]);
   const [topTrophies, setTopTrophies] = useState([]);
-  const getPlayerTopTrophies = async () => {
-    try {
-      const response = await fetch(`http://${IP}:4000/top5`, {
-        mode: "cors",
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      const json = await response.json();
-      const data = json;
-      setTopTrophies(data);
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
+
+  // fetch top 5 players based off trophies globally
+  const fetchTrophies = async () => {
+    const data = await fetchTopTrophies();
+    setTopTrophies(data);
   };
 
   // fetch top 5 players based off versus trophies globally
-  const [topVersusTrophies, setTopVersusTrophies] = useState([]);
-  const getPlayerTopVersusTrophies = async () => {
-    try {
-      const response = await fetch(`http://${IP}:4000/versusTop5`, {
-        mode: "cors",
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      const json = await response.json();
-      const data = json;
-      setTopVersusTrophies(data);
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
+  const fetchVersusTrophies = async () => {
+    const data = await fetchTopVersusTrophies();
+    setTopVersusTrophies(data);
   };
 
   useEffect(() => {
-    getPlayerTopTrophies();
-    getPlayerTopVersusTrophies();
+    fetchTrophies();
+    fetchVersusTrophies();
   }, []);
 
   return (
