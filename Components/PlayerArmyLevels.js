@@ -45,7 +45,7 @@ const PlayerArmyLevels = () => {
         paddingTop={5}
       >
         {/* Barbarian king hero */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/heroes/barbarianHero.png")}
@@ -56,7 +56,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Archer queen hero*/}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/heroes/archerHero.png")}
@@ -67,7 +67,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Grand warden hero*/}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/heroes/grandWardenHero.png")}
@@ -78,7 +78,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Royal champion hero*/}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/heroes/royalChampionHero.png")}
@@ -89,7 +89,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Battle machine hero*/}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/heroes/battleMachineHero.png")}
@@ -111,7 +111,7 @@ const PlayerArmyLevels = () => {
         paddingTop={5}
       >
         {/* L.A.S.S.I pet */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/pets/LASSI.png")}
@@ -122,7 +122,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Electro owl pet */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/pets/electroOwl.png")}
@@ -133,7 +133,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Mighty yak pet */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/pets/mightyYak.png")}
@@ -144,7 +144,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Unicorn pet */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/pets/unicorn.png")}
@@ -155,7 +155,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Phoenix pet */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/pets/phoenix.png")}
@@ -166,7 +166,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Poison lizard pet */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/pets/poisonLizard.png")}
@@ -177,7 +177,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Diggy pet */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/pets/diggy.png")}
@@ -188,7 +188,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Frosty pet */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/pets/frosty.png")}
@@ -210,7 +210,7 @@ const PlayerArmyLevels = () => {
         paddingTop={5}
       >
         {/* Barbarian troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/barbarianTroop.png")}
@@ -221,7 +221,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Archer troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/archerTroop.png")}
@@ -232,7 +232,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Goblin troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/goblinTroop.png")}
@@ -243,7 +243,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Giant troop*/}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/giantTroop.png")}
@@ -254,7 +254,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Wall breaker troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/wallBreakerTroop.png")}
@@ -265,7 +265,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Balloon troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/balloonTroop.png")}
@@ -276,7 +276,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Wizard troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/wizardTroop.png")}
@@ -287,7 +287,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Healer troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/healerTroop.png")}
@@ -298,7 +298,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Dragon troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/dragonTroop.png")}
@@ -309,7 +309,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Pekka troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/pekkaTroop.png")}
@@ -320,7 +320,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Baby dragon troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/babyDragonTroop.png")}
@@ -331,7 +331,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Miner troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/minerTroop.png")}
@@ -342,7 +342,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Electro dragon troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/electroDragonTroop.png")}
@@ -353,7 +353,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Yeti troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/yetiTroop.png")}
@@ -364,7 +364,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Dragon rider troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/dragonRiderTroop.png")}
@@ -375,7 +375,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Minion troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/minionTroop.png")}
@@ -386,7 +386,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Hog rider troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/hogRiderTroop.png")}
@@ -397,7 +397,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Valkyrie troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/valkyrieTroop.png")}
@@ -408,7 +408,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Golem troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/golemTroop.png")}
@@ -419,7 +419,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Witch troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/witchTroop.png")}
@@ -430,7 +430,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Lava hound troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/lavaHoundTroop.png")}
@@ -441,7 +441,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Bowler troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/bowlerTroop.png")}
@@ -452,7 +452,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Ice golem troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/iceGolemTroop.png")}
@@ -463,7 +463,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Head hunter troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/headHunterTroop.png")}
@@ -474,7 +474,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Electro titan troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/electroTitanTroop.png")}
@@ -485,7 +485,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Wall wrecker troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/wallWreckerTroop.png")}
@@ -496,7 +496,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Battle blimp troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/battleBlimpTroop.png")}
@@ -507,7 +507,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Stone slammer troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/stoneSlammerTroop.png")}
@@ -518,7 +518,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Siege barracks troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/siegeBarracksTroop.png")}
@@ -529,7 +529,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Log launcher troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/logLauncherTroop.png")}
@@ -540,7 +540,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Flame flinger troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/flameFlingerTroop.png")}
@@ -551,7 +551,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Battle drill troop */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/troops/battleDrillTroop.png")}
@@ -573,7 +573,7 @@ const PlayerArmyLevels = () => {
         paddingTop={5}
       >
         {/* Lightning spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/lightningSpell.png")}
@@ -584,7 +584,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Healing spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/healingSpell.png")}
@@ -595,7 +595,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Rage spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/rageSpell.png")}
@@ -606,7 +606,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Jump spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/jumpSpell.png")}
@@ -617,7 +617,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Freeze spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/freezeSpell.png")}
@@ -628,7 +628,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Clone spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/cloneSpell.png")}
@@ -639,7 +639,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Invisibility spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/invisibilitySpell.png")}
@@ -650,7 +650,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Recall spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/recallSpell.png")}
@@ -661,7 +661,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Poison spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/poisonSpell.png")}
@@ -672,7 +672,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Earthquake spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/earthquakeSpell.png")}
@@ -683,7 +683,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Haste spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/hasteSpell.png")}
@@ -694,7 +694,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Skeleton spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/skeletonSpell.png")}
@@ -705,7 +705,7 @@ const PlayerArmyLevels = () => {
         </Text>
 
         {/* Bat spell */}
-        <Text style={styles.unitContainer}>
+        <Text>
           <Image
             style={styles.images}
             source={require("../assets/spells/batSpell.png")}
