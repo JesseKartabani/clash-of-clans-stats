@@ -29,6 +29,13 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const headers = {
+  headers: {
+    "Content-type": "application/json",
+    Authorization: `Bearer ${API_TOKEN}`,
+  },
+};
+
 // Highest trophies globally limted to 5 responses
 app.get("/top5", async (req, res) => {
   try {
@@ -43,13 +50,6 @@ app.get("/top5", async (req, res) => {
     console.error(error);
   }
 });
-
-const headers = {
-  headers: {
-    "Content-type": "application/json",
-    Authorization: `Bearer ${API_TOKEN}`,
-  },
-};
 
 // Highest versus trophies globally limted to 5 responses
 app.get("/versusTop5", async (req, res) => {

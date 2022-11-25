@@ -20,7 +20,7 @@ const StatSearch = () => {
 
   // Validate user input then navigate to player stats screen
   function checkUserInput(input) {
-    if (input.length < 8) {
+    if (input.length < 7) {
       alert("Tag too short");
       return;
     } else {
