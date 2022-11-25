@@ -34,15 +34,9 @@ app.get("/top5", async (req, res) => {
   try {
     const response = await fetch(
       "https://api.clashofclans.com/v1/locations/global/rankings/players?limit=5",
-      {
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${API_TOKEN}`,
-        },
-      }
+      headers
     );
-    const json = await response.json();
-    const globalRankingData = json;
+    const globalRankingData = await response.json();
     res.send(globalRankingData);
     console.log(globalRankingData);
   } catch (error) {
@@ -50,20 +44,21 @@ app.get("/top5", async (req, res) => {
   }
 });
 
+const headers = {
+  headers: {
+    "Content-type": "application/json",
+    Authorization: `Bearer ${API_TOKEN}`,
+  },
+};
+
 // Highest versus trophies globally limted to 5 responses
 app.get("/versusTop5", async (req, res) => {
   try {
     const response = await fetch(
       "https://api.clashofclans.com/v1/locations/global/rankings/players-versus?limit=5",
-      {
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${API_TOKEN}`,
-        },
-      }
+      headers
     );
-    const json = await response.json();
-    const globalVersusRankingData = json;
+    const globalVersusRankingData = await response.json();
     res.send(globalVersusRankingData);
     console.log(globalVersusRankingData);
   } catch (error) {
@@ -93,15 +88,9 @@ app.get("/userSearchResults", async (req, res) => {
       try {
         const response = await fetch(
           `https://api.clashofclans.com/v1/players/%23${newSearch}`,
-          {
-            headers: {
-              "Content-type": "application/json",
-              Authorization: `Bearer ${API_TOKEN}`,
-            },
-          }
+          headers
         );
-        const json = await response.json();
-        const search = json;
+        const search = await response.json();
         res.send(search);
         console.log(search);
       } catch (error) {
