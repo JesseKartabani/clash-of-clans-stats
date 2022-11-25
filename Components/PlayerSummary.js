@@ -6,47 +6,33 @@ import {
   Platform,
   Image,
 } from "react-native";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Menu,
   MenuOption,
   MenuOptions,
   MenuTrigger,
 } from "react-native-popup-menu";
-import { IP } from "@env";
 import { Icon } from "@rneui/base";
-import { useNavigation } from "@react-navigation/native";
+import { useQuery } from "@tanstack/react-query";
+import { fetchPlayerStats } from "../fetchers/stats";
 
 const PlayerSummary = () => {
-  const navigation = useNavigation();
-
   // Player data for users search
-  const [userStats, setUserStats] = useState([]);
-  const getUserStats = async () => {
-    try {
-      const response = await fetch(`http://${IP}:4000/userSearchResults`, {
-        mode: "cors",
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      const json = await response.json();
-      const data = json;
-      setUserStats(data);
-      // If player isnt found alert user then navigate to home screen
-      if (data.reason == "notFound") {
-        alert("Player Not Found");
-        navigation.navigate("Clash of Clans Stats");
-      }
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { isError, isSuccess, isLoading, data, error } = useQuery(
+    ["playerStats"],
+    fetchPlayerStats
+  );
 
-  useEffect(() => {
-    getUserStats();
-  }, []);
+  if (isLoading) {
+    console.log("loading");
+    return <Text>Loading summary</Text>;
+  }
+
+  if (isError) {
+    console.log(error);
+    return <Text>Error...</Text>;
+  }
 
   return (
     <ImageBackground
@@ -59,9 +45,7 @@ const PlayerSummary = () => {
 
         {/* Player name */}
         <View>
-          {userStats.name != undefined && (
-            <Text style={styles.playerName}>{userStats.name}</Text>
-          )}
+          <Text style={styles.playerName}>{data.name}</Text>
         </View>
 
         {/* First row */}
@@ -74,11 +58,8 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/townHall.png")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>
-                    {"TH " + userStats.townHallLevel}
-                  </Text>
-                )}
+
+                <Text style={styles.statTxt}>{"TH " + data.townHallLevel}</Text>
               </View>
             </MenuTrigger>
 
@@ -97,11 +78,10 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/builderHall.png")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>
-                    {"BH " + userStats.builderHallLevel}
-                  </Text>
-                )}
+
+                <Text style={styles.statTxt}>
+                  {"BH " + data.builderHallLevel}
+                </Text>
               </View>
             </MenuTrigger>
 
@@ -120,9 +100,8 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/clanBanner.png")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>{userStats.clan.name}</Text>
-                )}
+
+                <Text style={styles.statTxt}>{data.clan.name}</Text>
               </View>
             </MenuTrigger>
 
@@ -144,9 +123,8 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/experience.png")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>{userStats.expLevel}</Text>
-                )}
+
+                <Text style={styles.statTxt}>{data.expLevel}</Text>
               </View>
             </MenuTrigger>
 
@@ -165,9 +143,8 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/whiteStar.png")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>{userStats.warStars}</Text>
-                )}
+
+                <Text style={styles.statTxt}>{data.warStars}</Text>
               </View>
             </MenuTrigger>
 
@@ -186,9 +163,8 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/trophy.jpg")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>{userStats.trophies}</Text>
-                )}
+
+                <Text style={styles.statTxt}>{data.trophies}</Text>
               </View>
             </MenuTrigger>
 
@@ -207,11 +183,10 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/legendTrophie.png")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>
-                    {userStats.legendStatistics.legendTrophies}
-                  </Text>
-                )}
+
+                <Text style={styles.statTxt}>
+                  {data.legendStatistics.legendTrophies}
+                </Text>
               </View>
             </MenuTrigger>
 
@@ -233,9 +208,8 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/versus-trophy.jpg")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>{userStats.versusTrophies}</Text>
-                )}
+
+                <Text style={styles.statTxt}>{data.versusTrophies}</Text>
               </View>
             </MenuTrigger>
 
@@ -251,9 +225,8 @@ const PlayerSummary = () => {
             <MenuTrigger style={styles.menuTriggerBackgroundGreen}>
               <View style={styles.menuTriggerContainer}>
                 <Icon name="arrowup" color="white" type="antdesign" />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>{userStats.donations}</Text>
-                )}
+
+                <Text style={styles.statTxt}>{data.donations}</Text>
               </View>
             </MenuTrigger>
 
@@ -269,11 +242,8 @@ const PlayerSummary = () => {
             <MenuTrigger style={styles.menuTriggerBackgroundRed}>
               <View style={styles.menuTriggerContainer}>
                 <Icon name="arrowdown" color="white" type="antdesign" />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>
-                    {userStats.donationsReceived}
-                  </Text>
-                )}
+
+                <Text style={styles.statTxt}>{data.donationsReceived}</Text>
               </View>
             </MenuTrigger>
 
@@ -292,11 +262,8 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/crossingSwords.png")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>
-                    {userStats.versusBattleWins}
-                  </Text>
-                )}
+
+                <Text style={styles.statTxt}>{data.versusBattleWins}</Text>
               </View>
             </MenuTrigger>
 
@@ -318,9 +285,8 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/crossingSwords.png")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>{userStats.attackWins}</Text>
-                )}
+
+                <Text style={styles.statTxt}>{data.attackWins}</Text>
               </View>
             </MenuTrigger>
 
@@ -339,9 +305,8 @@ const PlayerSummary = () => {
                   style={styles.icons}
                   source={require("../assets/shield.jpg")}
                 />
-                {userStats.name != undefined && (
-                  <Text style={styles.statTxt}>{userStats.defenseWins}</Text>
-                )}
+
+                <Text style={styles.statTxt}>{data.defenseWins}</Text>
               </View>
             </MenuTrigger>
 
