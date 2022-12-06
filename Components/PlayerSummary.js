@@ -16,6 +16,7 @@ import {
 import { Icon } from "@rneui/base";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPlayerStats } from "../fetchers/stats";
+import { CircularProgress } from "@mui/material";
 
 const PlayerSummary = () => {
   // Player data for users search
@@ -26,7 +27,7 @@ const PlayerSummary = () => {
 
   if (isLoading) {
     console.log("loading");
-    return <Text>Loading summary</Text>;
+    return <CircularProgress style={styles.loadingCircle} />;
   }
 
   if (isError) {
@@ -101,7 +102,7 @@ const PlayerSummary = () => {
                   source={require("../assets/clanBanner.png")}
                 />
 
-                <Text style={styles.statTxt}>{data.clan.name}</Text>
+                <Text style={styles.statTxt}>{data.clan?.name}</Text>
               </View>
             </MenuTrigger>
 
@@ -185,7 +186,7 @@ const PlayerSummary = () => {
                 />
 
                 <Text style={styles.statTxt}>
-                  {data.legendStatistics.legendTrophies}
+                  {data.legendStatistics?.legendTrophies}
                 </Text>
               </View>
             </MenuTrigger>
@@ -435,5 +436,9 @@ const styles = StyleSheet.create({
         width: 175,
       },
     }),
+  },
+
+  loadingCircle: {
+    alignSelf: "center",
   },
 });

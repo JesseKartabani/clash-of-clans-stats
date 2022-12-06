@@ -50,40 +50,38 @@ const GlobalPlayerRanking = () => {
             </Text>
           </View>
           {/* Name and trophies */}
-          {topTrophies.items != undefined && (
-            <Text style={styles.statTxt}>
-              {topTrophies.items[0].name +
-                ":  " +
-                topTrophies.items[0].trophies}
-            </Text>
-          )}
-          {topTrophies.items != undefined && (
-            <Text style={styles.statTxt}>
-              {topTrophies.items[1].name +
-                ":  " +
-                topTrophies.items[1].trophies}
-            </Text>
-          )}
-          {topTrophies.items != undefined && (
-            <Text style={styles.statTxt}>
-              {topTrophies.items[2].name +
-                ":  " +
-                topTrophies.items[2].trophies}
-            </Text>
-          )}
-          {topTrophies.items != undefined && (
-            <Text style={styles.statTxt}>
-              {topTrophies.items[3].name +
-                ":  " +
-                topTrophies.items[3].trophies}
-            </Text>
-          )}
-          {topTrophies.items != undefined && (
-            <Text style={styles.statTxt}>
-              {topTrophies.items[4].name +
-                ":  " +
-                topTrophies.items[4].trophies}
-            </Text>
+          {topTrophies.items && (
+            <>
+              <Text style={styles.statTxt}>
+                {topTrophies.items[0].name +
+                  ":  " +
+                  topTrophies.items[0].trophies}
+              </Text>
+
+              <Text style={styles.statTxt}>
+                {topTrophies.items[1].name +
+                  ":  " +
+                  topTrophies.items[1].trophies}
+              </Text>
+
+              <Text style={styles.statTxt}>
+                {topTrophies.items[2].name +
+                  ":  " +
+                  topTrophies.items[2].trophies}
+              </Text>
+
+              <Text style={styles.statTxt}>
+                {topTrophies.items[3].name +
+                  ":  " +
+                  topTrophies.items[3].trophies}
+              </Text>
+
+              <Text style={styles.statTxt}>
+                {topTrophies.items[4].name +
+                  ":  " +
+                  topTrophies.items[4].trophies}
+              </Text>
+            </>
           )}
         </View>
 
@@ -99,40 +97,38 @@ const GlobalPlayerRanking = () => {
             </Text>
           </View>
           {/* Name and trophies */}
-          {topVersusTrophies.items != undefined && (
-            <Text style={styles.statTxt}>
-              {topVersusTrophies.items[0].name +
-                ":  " +
-                topVersusTrophies.items[0].versusTrophies}
-            </Text>
-          )}
-          {topVersusTrophies.items != undefined && (
-            <Text style={styles.statTxt}>
-              {topVersusTrophies.items[1].name +
-                ":  " +
-                topVersusTrophies.items[1].versusTrophies}
-            </Text>
-          )}
-          {topVersusTrophies.items != undefined && (
-            <Text style={styles.statTxt}>
-              {topVersusTrophies.items[2].name +
-                ":  " +
-                topVersusTrophies.items[2].versusTrophies}
-            </Text>
-          )}
-          {topVersusTrophies.items != undefined && (
-            <Text style={styles.statTxt}>
-              {topVersusTrophies.items[3].name +
-                ":  " +
-                topVersusTrophies.items[3].versusTrophies}
-            </Text>
-          )}
-          {topVersusTrophies.items != undefined && (
-            <Text style={styles.statTxt}>
-              {topVersusTrophies.items[4].name +
-                ":  " +
-                topVersusTrophies.items[4].versusTrophies}
-            </Text>
+          {topVersusTrophies.items && (
+            <>
+              <Text style={styles.statTxt}>
+                {topVersusTrophies.items[0].name +
+                  ":  " +
+                  topVersusTrophies.items[0].versusTrophies}
+              </Text>
+
+              <Text style={styles.statTxt}>
+                {topVersusTrophies.items[1].name +
+                  ":  " +
+                  topVersusTrophies.items[1].versusTrophies}
+              </Text>
+
+              <Text style={styles.statTxt}>
+                {topVersusTrophies.items[2].name +
+                  ":  " +
+                  topVersusTrophies.items[2].versusTrophies}
+              </Text>
+
+              <Text style={styles.statTxt}>
+                {topVersusTrophies.items[3].name +
+                  ":  " +
+                  topVersusTrophies.items[3].versusTrophies}
+              </Text>
+
+              <Text style={styles.statTxt}>
+                {topVersusTrophies.items[4].name +
+                  ":  " +
+                  topVersusTrophies.items[4].versusTrophies}
+              </Text>
+            </>
           )}
         </View>
       </ScrollView>
